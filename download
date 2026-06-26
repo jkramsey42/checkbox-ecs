@@ -1,0 +1,7 @@
+# Never commit your Google service account file
+service_account.json
+
+# Python environment files
+venv/
+__pycache__/
+*.pyc
