@@ -60,7 +60,10 @@ def checkbox_webhook():
     row = [
         datetime.now(timezone.utc).isoformat(),
         get_value(data, "survey_name", "SurveyName", "surveyTitle"),
-        get_value(data, "response_id", "ResponseID", "responseId"),
+        get_value(data, "respondentID", "respondentid", "respondentid"),
+        get_value(data, "orgname", "orgname", "orgname"),
+        get_value(data, "jobcat", "jobcat", "jobcat"),
+
         get_value(data, "first_name", "FirstName", "firstName"),
         get_value(data, "last_name", "LastName", "lastName"),
         get_value(data, "email", "Email", "email"),
