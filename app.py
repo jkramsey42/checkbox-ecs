@@ -86,7 +86,9 @@ def checkbox_webhook():
         get_value(data, "race_Additional group (please specify):"),
         get_value(data, "tenure"),
     ]
-
+    print("Row being written:")
+    print(row)
+    print(f"Row length: {len(row)}")
     worksheet.append_row(row, value_input_option="USER_ENTERED")
 
     return jsonify({"status": "success"}), 200
