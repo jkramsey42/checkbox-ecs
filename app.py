@@ -89,11 +89,14 @@ def checkbox_webhook():
     print("Row being written:")
     print(row)
     print(f"Row length: {len(row)}")
-    worksheet.append_row(
-    row,
-    value_input_option="USER_ENTERED",
-    table_range="A1:Z1"
-)
+    next_row = len(worksheet.col_values(1)) + 1
+    end_col = chr(ord("A") + len(row) - 1)
+
+    worksheet.update(
+        f"A{next_row}:{end_col}{next_row}",
+        [row],
+        value_input_option="USER_ENTERED"
+    )
 
     return jsonify({"status": "success"}), 200
 
